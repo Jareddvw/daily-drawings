@@ -1,5 +1,5 @@
 # Daily-drawings
-Drawing application using Paper.js and JQuery. Gives daily prompts to users to keep them drawing regularly. This is a side project that started as a class project for CS160, User Interface Design and Development. 
+Drawing application using Paper.js and jQuery. Gives daily prompts to users to keep them drawing regularly. This is a side project that started as a class project for CS160, User Interface Design and Development. 
 
 
 ### Requirements
