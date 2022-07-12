@@ -7,7 +7,7 @@ const path = require('path');
 
 //specify that we want to run our website on 'http://localhost:8000/'
 const host = 'localhost';
-const port = 8000;
+const port = 8001;
 
 var publicPath = path.join(__dirname, 'public'); //get the path to use our "public" folder where we stored our html, css, images, etc
 app.use(express.static(publicPath));  //tell express to use that folder

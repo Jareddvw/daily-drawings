@@ -11,16 +11,32 @@
     <script type="text/paperscript" src="js/drawingapp.js" canvas="main-canvas"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Colorpicker -->
+    <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
+
 </head>
 <body>
-    <div class="row justify-content-center align-items-center mt-3 mb-3">
-        <div type="button" class="bob mx-2" id="default"><i class="bi bi-brush"></i></div>
-        <div type="button" class="bob mx-2" id="green-line"><i class="bi bi-brush"></i></div>
-        <div type="button" class="bob mx-2" id="blue-line"><i class="bi bi-brush"></i></div>
-        <div type="button" class="bob mx-2" id="red-line"><i class="bi bi-brush"></i></div>
-        <div type="button" class="bob mx-2" id="thick-stroke"><i class="bi bi-plus-circle"></i></div>
-        <div type="button" class="bob mx-2" id="thin-stroke"><i class="bi bi-dash-circle"></i></div>
-        <div type="button" class="bob mx-2" id="undo-button"><i class="bi bi-arrow-counterclockwise"></i></div>
+    <div class="row justify-content-center align-items-center pt-3 pb-3 px-3 toolbar">
+        <div class="pen bob mx-2" id="default"></div>
+        <div class="pen bob mx-2" id="darkred-line"></div>
+        <div class="pen bob mx-2" id="green-line"></div>
+        <div class="pen bob mx-2" id="blue-line"></div>
+        <div class="pen bob mx-2" id="red-line"></div>
+        <div class="pen bob mx-2" id="yellow-line"></div>
+        <div class="pen bob mx-2" id="eraser-button"><i class="bi bi-eraser-fill"></i></div>
+        <div class="pen bob mx-2" id="stroke-eraser"><i class="bi bi-eraser-fill"></i></div>
+
+        <div class="util bob mx-2" id="thick-stroke"><i class="bi bi-plus-circle"></i></div>
+        <div class="stroke-container mx-2"><div id="stroke-width"></div></div>
+        <div class="util bob mx-2" id="thin-stroke"><i class="bi bi-dash-circle"></i></div>
+
+        <div class="util bob mx-2" id="undo-button"><i class="bi bi-arrow-90deg-left"></i></i></div>
+        <div class="util bob mx-2" id="redo-button"><i class="bi bi-arrow-90deg-right"></i></i></div>
+
+        <div class="bob mx-2" id="brush-chooser"><i class="bi bi-brush"></i></div>
+        <div class="util bob mx-2" id="clear-button"><i class="bi bi-trash"></i></div>
+        <!-- <input type="color"> -->
     </div>
     <div class="row justify-content-center">
         <canvas id="main-canvas">

@@ -1,69 +1,133 @@
-:root {
+* {
+    box-sizing: border-box;
+  }
+  body { /*default body style (black Verdana)*/
+    font-family:Verdana;
+    color:#000000;
+  }
+  
+  :root {
     --main-canvas-height:90vh;
     --main-canvas-width:100vw;
-    --main-canvas-bg:white;
-
-    --default-green:rgb(78, 144, 78);
-    --default-red:rgb(132, 65, 65);
-    --default-blue:rgb(99, 99, 151);
-}
-
-body {
-    position:relative;
-}
-
-#main-canvas {
+    --main-canvas-bg:rgb(254, 233, 206);
+  
+    --default-green:rgb(129, 234, 129);
+    --default-red:rgb(226, 124, 124);
+    --default-blue:rgb(152, 152, 235);
+    --default-yellow: rgb(114, 221, 209);
+  
+    --cool-red: #741b47;
+  
+    --non-color-button-bg: rgba(214, 196, 196, 0.658);
+  
+    --bob-height-width:40px;
+  
+    --toolbar-bg:#277098;
+  }
+  
+  #main-canvas {
     width: var(--main-canvas-width);
     height: var(--main-canvas-height);
     background-color: var(--main-canvas-bg);
     outline:0.5px solid black;
-}
-
-.bob {
+  }
+  
+  .bob {
     border-radius: 50%;
-    height:40px;
-    width:40px;
+    height: var(--bob-height-width);
+    width: var(--bob-height-width);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.bob:hover {
-    opacity: 80%;
+  }
+  
+  .bob:hover {
+    opacity: 90%;
     cursor: pointer;
-}
-
-#default {
+  }
+  
+  #default {
     background-color: black;
     color:white;
-}
-
-#green-line {
+  }
+  
+  #green-line {
     background-color: var(--default-green);
     color:white;
-}
-
-#blue-line {
-    background-color: var(--default-blue);   
+  }
+  #blue-line {
+    background-color: var(--default-blue);
     color:white;
-}
-
-#red-line {
-    background-color: var(--default-red);   
+  }
+  #red-line {
+    background-color: var(--default-red);
     color:white;
-}
-
-
-#thick-stroke {
-    background-color: rgb(131, 123, 123);
+  }
+  #yellow-line {
+    background-color: var(--default-yellow);
     color:white;
-}
-#thin-stroke {
-    background-color: rgb(131, 123, 123);
+  }
+  #darkred-line {
+    background-color: var(--cool-red);
     color:white;
-}
-
-#undo-button {
-    background-color: rgb(131, 123, 123);
+  }
+  
+  #eraser-button {
+    border: 1px solid white;
+    background-color: var(--main-canvas-bg);
+  }
+  
+  #stroke-eraser {
+    border: 1px solid white;
+    background-color: var(--non-color-button-bg);
+  }
+  
+  .util {
+    background-color: var(--non-color-button-bg);
     color:white
-}
+  }
+  
+  .active {
+    outline: 2px dashed rgb(209, 209, 209);
+    animation: active-animation 0.2s;
+  }
+  
+  @keyframes active-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  #brush-chooser {
+    border: 1px solid white;
+  }
+  
+  .stroke-container {
+    height: var(--bob-height-width);
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding:0;
+  }
+  #stroke-width {
+    border-radius: 50%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .toolbar {
+    background-color: var(--toolbar-bg);
+  }
+  
+  .colorPickerContainer {
+    margin-top: 200px;;
+    background-color: green;
+  }
