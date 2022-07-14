@@ -24,8 +24,9 @@
         <div class="pen bob mx-2" id="blue-line"></div>
         <div class="pen bob mx-2" id="red-line"></div>
         <div class="pen bob mx-2" id="yellow-line"></div>
-        <div class="pen bob mx-2" id="eraser-button"><i class="bi bi-eraser-fill"></i></div>
-        <div class="pen bob mx-2" id="stroke-eraser"><i class="bi bi-eraser-fill"></i></div>
+        <div class="util bob mx-2" id="select-button"><i class="bi bi-arrows-move"></i></div>
+        <div class="pen bob mx-2" id="eraser-button">.<i class="bi bi-eraser-fill"></i></div>
+        <div class="pen bob mx-2" id="stroke-eraser">|<i class="bi bi-eraser-fill"></i></div>
 
         <div class="util bob mx-2" id="thick-stroke"><i class="bi bi-plus-circle"></i></div>
         <div class="stroke-container mx-2"><div id="stroke-width"></div></div>
@@ -34,15 +35,34 @@
         <div class="util bob mx-2" id="undo-button"><i class="bi bi-arrow-90deg-left"></i></i></div>
         <div class="util bob mx-2" id="redo-button"><i class="bi bi-arrow-90deg-right"></i></i></div>
 
-        <div class="bob mx-2" id="brush-chooser"><i class="bi bi-brush"></i></div>
+        <div class="bob mx-2" id="brush-chooser">
+          <div class="drop">
+            <button class="brushbtn"><i class="bi bi-brush icon"></i></button>
+            <div class="dropdown" id="brushdrop">
+              <i class="bi bi-brush bob util"></i>
+              <i class="bi bi-brush bob util"></i>
+              <i class="bi bi-brush bob util"></i>
+            </div>
+          </div>
+        </div>
         <div class="util bob mx-2" id="clear-button"><i class="bi bi-trash"></i></div>
+        <div class="util bob mx-2" id="settings-button"><i class="bi bi-gear"></i></div>
+        <div id="nav" class="settings">
+          <a href="javascript:void(0)" id="closebtn">&times;</a>
+          <div class="settings-content">
+            <h1 class="title"><b>Settings</b></h1>
+            <h2><a class="settings-opt" href="/blocks">My Drawing History</a></h2>
+            <h2 class="settings-opt" id="save">Save your drawing</h2>
+          </div>
+        </div>
         <!-- <input type="color"> -->
     </div>
     <div class="row justify-content-center">
-        <canvas id="main-canvas">
-
-
-        </canvas>
+      <div id="display">
+      <a href="javascript:void(0)" id="displayx">&times;</a>
+      <h5>Here's a random blob for inspiration! You can continue your drawing from here or erase it and start over.</h5>
+      </div>
+        <canvas id="main-canvas"></canvas>
     </div>
 </body>
 </html>
