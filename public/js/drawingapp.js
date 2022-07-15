@@ -283,10 +283,13 @@ $(document).on('click', '.bob' ,function (e) {
     $("#stroke-width").css("background-color", currentColor);
 });
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-function randVal(base, bound) {
-  return Math.random() * (bound-base) + base;
+
+function randomXorY(base) {
+  return Math.floor((Math.random() * parseInt(base) * 3.0/4.0)) + parseInt(base) / 8
 }
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
 
 $('#displayx').on('click', function(e) {
   $("#display").remove()
@@ -341,10 +344,10 @@ $('#save').on('click', function(e) {
     })
     var canvasHeight = $('#main-canvas').css('height')
     var canvasWidth = $('#main-canvas').css('width')
-    for (var i=0; i<=6; i += 1) {
-        path.add(new Point(Math.floor(Math.random() * parseInt(canvasWidth) / 2) + parseInt(canvasWidth) / 4, Math.floor(Math.random() * parseInt(canvasHeight) / 2) + parseInt(canvasHeight) / 4));
+    for (var i = 0; i <= randomIntFromInterval(5, 10); i += 1) {
+        path.add(new Point(randomXorY(canvasWidth), randomXorY(canvasHeight)));
     }
-    path.simplify();
+    path.smooth();
  });
 
 // Kind of pen-like drawing tool with "blotting":
