@@ -348,6 +348,17 @@ $('#save').on('click', function(e) {
         path.add(new Point(randomXorY(canvasWidth), randomXorY(canvasHeight)));
     }
     path.smooth();
+
+    // setting history. If none, initialize it as 1. Otherwise, left shift and add 1.
+    var history = localStorage.getItem("history")
+    if (history) {
+        history = (history << 1) + 1
+    } else {
+        history = 1
+    }
+    localStorage.setItem("history", history)
+    console.log(history)
+
  });
 
 // Kind of pen-like drawing tool with "blotting":
