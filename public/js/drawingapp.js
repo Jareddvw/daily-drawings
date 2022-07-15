@@ -287,8 +287,9 @@ $(document).on('click', '.bob' ,function (e) {
 function randVal(base, bound) {
   return Math.random() * (bound-base) + base;
 }
+
 $('#displayx').on('click', function(e) {
-  $("#display").css("display", "none");
+  $("#display").remove()
 })
 $('#save').on('click', function(e) {
   alert("Saved drawing!");
@@ -301,7 +302,7 @@ $('#save').on('click', function(e) {
     $("#stroke-width").css("background-color", currentColor);
     $("#displayx").addClass("show");
     path = new Path({
-        strokeColor: currentColor,
+        strokeColor: new Color("#" + Math.floor(Math.random()*16777215).toString(16)),
         strokeWidth: currentWidth,
         strokeCap: 'round',
         strokeJoin: 'round',
@@ -338,8 +339,10 @@ $('#save').on('click', function(e) {
             }
         },
     })
+    var canvasHeight = $('#main-canvas').css('height')
+    var canvasWidth = $('#main-canvas').css('width')
     for (var i=0; i<=6; i += 1) {
-        path.add(new Point(randVal(200, 1300), randVal(200, 600)));
+        path.add(new Point(Math.floor(Math.random() * parseInt(canvasWidth) / 2) + parseInt(canvasWidth) / 4, Math.floor(Math.random() * parseInt(canvasHeight) / 2) + parseInt(canvasHeight) / 4));
     }
     path.simplify();
  });
